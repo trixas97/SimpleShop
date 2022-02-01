@@ -4,10 +4,11 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { useProduct } from "../context/hooks";
+import { IProduct } from "../types/types";
 
-const ProductsView = () => {
-    const [searchParams, setSearchParams] = useSearchParams();
-    const product = useProduct(searchParams.get("per"))
+const ProductsPage: React.FC = () => {
+    let [searchParams] = useSearchParams();
+    const product: IProduct = useProduct(parseInt(searchParams.get("per")!))
     
     return product ? (
         <Box>
@@ -23,4 +24,4 @@ const ProductsView = () => {
     ) : (<></>)
 }
 
-export default ProductsView
+export default ProductsPage

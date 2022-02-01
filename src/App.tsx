@@ -3,7 +3,7 @@ import Router from './router/Router'
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
-function App() {
+const App: React.FC = () => {
   return (
       <Box className="App">
         <Box className="head">

@@ -1,8 +1,9 @@
 
 import { useContextSelector } from 'use-context-selector';
+import { IProduct } from '../types/types';
 import { Context } from './context';
 
-const useProducts = () => {
+const useProducts = (): IProduct[] => {
     const context = useContextSelector(Context, (state) => state.products);
 
     if (context === undefined) {
@@ -12,8 +13,8 @@ const useProducts = () => {
     return context;
 };
 
-const useProduct = (id) => {
-    const context = useContextSelector(Context, (state) => state.products.find(product => product.id === parseInt(id)));
+const useProduct = (id: number) : IProduct => {
+    const context = useContextSelector(Context, (state) => state.products.find((product) => product.id === id));
 
     if (context === undefined) {
       throw new Error('useProduct must be used within ContextProvider');

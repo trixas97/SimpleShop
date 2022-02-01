@@ -3,8 +3,7 @@ import ProductsPresenter from "../components/ProductsPresenter"
 import Box from '@material-ui/core/Box';
 import Products from "../components/Products";
 
-
-const ProductsView = () => {
+const ProductsPages: React.FC = () => {
     return (
         <Box>
             <ProductsPresenter Component={Products}/>
@@ -12,4 +11,4 @@ const ProductsView = () => {
     )
 }
 
-export default ProductsView
+export default ProductsPages
